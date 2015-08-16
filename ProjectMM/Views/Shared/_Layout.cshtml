@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .ng-invalid.ng-touched {
+            background-color: #FA787E;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @*<li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>*@
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    @RenderBody()
+    
+    
+    <nav class="navbar navbar-fixed-bottom" role="navigation">
+        <hr />
+        <div class="col-md-4 text-left">
+            <ul class="text-left list-unstyled">
+                <li><strong>contactus@creativmagic.com</strong></li>
+                <li><strong>089-546-3568</strong></li>
+                <li><strong>&copy;Creativ Magic @DateTime.Now.Year</strong></li>
+            </ul>
+        </div>
+        <div class="col-md-8 text-right">
+            <ul class="list-unstyled list-inline text-right">
+                <li><h4><strong>FAQ</strong></h4></li>
+                <li><h4><strong>Terms&Conditions</strong></h4></li>
+                <li><h4><strong>Privacy Policy</strong></h4></li>
+            </ul>
+            @*<p>contactus@vacationenvy.com</p><br />
+                <p>089-546-3568</p><br />
+                <p>&copy; Vacation Envy @DateTime.Now.Year</p>*@
+        </div>
+    </nav>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angular")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
